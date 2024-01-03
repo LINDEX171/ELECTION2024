@@ -60,6 +60,13 @@ class ElecteurController extends Controller
 
 
         $electeur->save();
+
+
+    // Incrémentez les votes du candidat choisi
+    $candidat = Candidat::find($request->candidat_id);
+    $candidat->increment('votes');
+
+
         // Redirige vers la route 'liste' avec un message de succès dans la session
         return redirect()->route('liste1')->with('success', 'Electeur ajouté avec succès');
         }
@@ -86,7 +93,7 @@ class ElecteurController extends Controller
 
     }
 
-    public function updatestorecandidat(Request $request)
+    public function updatestoreelecteur(Request $request)
     {
         $electeur = new Electeur(); //le dernier Produit est le modele Produit
         $electeur->Nom = $request->Nom;//pour l'enregister au niveau de la bdd

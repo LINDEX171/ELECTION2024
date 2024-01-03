@@ -144,10 +144,19 @@ return redirect()->route('liste')->with('success', 'Candidat ajouté avec succè
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+   // Dans le contrôleur de candidats (CandidatController)
+public function pourcentages()
+{
+    $candidats = Candidat::all();
+    $totalVotes = Candidat::sum('votes');
+
+    foreach ($candidats as $candidat) {
+        $candidat->pourcentageVotes = ($totalVotes > 0) ? ($candidat->votes / $totalVotes) * 100 : 0;
     }
+
+    return view('candidats.pourcentages', compact('candidats', 'totalVotes'));
+}
+ 
 }
 
 

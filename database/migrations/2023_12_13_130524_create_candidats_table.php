@@ -17,6 +17,7 @@ return new class extends Migration
             $table->String("Nom");
             $table->String("Prenom");
             $table->String("Partie");
+            $table->integer('votes')->default(0);
             $table->text("Biographie");
             $table->boolean("validité");
             $table->mediumText("photo")->nullable();

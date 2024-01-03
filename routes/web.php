@@ -11,6 +11,7 @@ use App\Http\Controllers\ProgrammeController;
 use App\Http\Controllers\Auth\LoginController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,7 +50,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::get('/', [LoginController::class, 'showLoginForm']);
-
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/pourcentages', [CandidatController::class, 'pourcentages'])->name('pourcentages');
 
 
 

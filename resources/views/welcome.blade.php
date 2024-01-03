@@ -34,20 +34,28 @@
     p {
       color: white; /* Changement de la couleur du texte dans les balises p en blanc */
     }
+
+    button{
+        text-align: center;
+
+
+    }
   </style>
 
 </head>
 <body>
-
+    
 
    <!-- ... (votre contenu actuel) ... -->
 
 <div class="container space mb-3 d-flex justify-content-end">
 
 
-    <a href="{{ route('logout') }}" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <a href="{{ route('logout') }}" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit(); " >
         {{ __('SE DECONNECTER') }}
     </a>
+
+
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
@@ -67,7 +75,7 @@
   <br> </br>
   <div class="container space">
     <p>Nous sommes ravis de t'accueillir dans cet espace démocratique où tu pourras exercer ton droit de vote et jouer un rôle essentiel dans le choix du futur leader de notre pays. Nous te souhaitons un agréable parcours sur notre plateforme, en espérant que tu trouves toutes les informations nécessaires pour faire un choix éclairé lors de cette élection.</p>
-
+    <a href="/electeur" class="btn btn-primary">Voter</a>
     <div class="container space mb-3 d-flex justify-content-end">
   <!--    <button id="listerBtn" class="btn btn-success" ><a href={{ url('/candidat') }} class="btn btn-success">Ajouter candidat</a></button> -->
     </div>
