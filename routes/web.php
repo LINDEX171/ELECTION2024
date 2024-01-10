@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Candidat;
 use App\Models\Electeur;
 use App\Models\Programme;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SecteurController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\ElecteurController;
@@ -32,19 +34,60 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/accueil', function () {
         return view('welcome');
     });
+
+    Route::get('/votevalider', function () {
+        return view('votevalider');
+    });
+
+
     Route::get('/parrainage', function () {
         return view('parrainage');
     });
 
+   // candidat disponible pour les electeurs
+Route::get('/candidats-disponible', function () {
+    $candidat = Candidat::all();
+
+    return view('candidats-disponible', compact('candidat'));
+});
+
+
     Route::get('/candidat',[CandidatController::class,'index']);
-    Route::post('/storecandidats',[CandidatController::class,'store'])->name('enregistrerCandidat');
-    Route::get('/liste-candidat',[CandidatController::class,'liste'])->name('liste');
-    Route::get('/update-candidat/{id}',[CandidatController::class,'updatecandidat']);
-    Route::post('/updatestore',[CandidatController::class,'updatestorecandidat']);
-    Route::get('/delete-candidat/{id}',[CandidatController::class,'deletecandidat']);
+    Route::get('/electeur',[ElecteurController::class,'index']);
+
+
+   // web.php
+
+Route::get('/admin-dashboard',[AdminController::class,'index'])->name('admin.dashboard')->middleware('auth', 'admin');
+
+
+        Route::post('/storecandidats',[CandidatController::class,'store'])->name('enregistrerCandidat');
+        Route::get('/liste-candidat',[CandidatController::class,'liste'])->name('liste');
+        Route::get('/update-candidat/{id}',[CandidatController::class,'updatecandidat']);
+        Route::post('/updatestorecandidat',[CandidatController::class,'updatestorecandidat']);
+        Route::get('/delete-candidat/{id}',[CandidatController::class,'deletecandidat']);
+
+
+        Route::post('/storeelecteurs',[ElecteurController::class,'store'])->name('enregistrerElecteur');
+        Route::get('/liste-electeur',[ElecteurController::class,'liste'])->name('liste1');
+        Route::get('/update-electeur/{id}',[ElecteurController::class,'updateelecteur']);
+        Route::post('/updatestore',[ElecteurController::class,'updatestoreelecteur']);
+        Route::get('/delete-electeur/{id}',[ElecteurController::class,'deleteelecteur']);
+
+
+   // Route::group(['middleware' => ['role:admin']], function () {
+        // Routes accessibles uniquement aux utilisateurs avec le rôle d'admin
+
+
+   // });
+
+
+
+
 
     // Ajoutez d'autres routes si nécessaire
 });
+
 
 
 
@@ -55,12 +98,8 @@ Route::get('/pourcentages', [CandidatController::class, 'pourcentages'])->name('
 
 
 
-Route::get('/electeur',[ElecteurController::class,'index']);
-Route::post('/storeelecteurs',[ElecteurController::class,'store'])->name('enregistrerElecteur');
-Route::get('/liste-electeur',[ElecteurController::class,'liste'])->name('liste1');
-Route::get('/update-electeur/{id}',[ElecteurController::class,'updateelecteur']);
-Route::post('/updatestore',[ElecteurController::class,'updatestoreelecteur']);
-Route::get('/delete-electeur/{id}',[ElecteurController::class,'deleteelecteur']);
+
+
 
 Route::get('/programme',[ProgrammeController::class,'index']);
 Route::post('/storeprogrammes',[ProgrammeController::class,'store'])->name('enregistrerProgramme');

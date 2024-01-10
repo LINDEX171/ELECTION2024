@@ -61,6 +61,9 @@ class CandidatController extends Controller
 }// Enregistre l'objet $candidat, qui inclut maintenant le nom de fichier de la photo, dans la base de données
          $candidat->save();
 // Redirige vers la route 'liste' avec un message de succès dans la session
+
+
+
 return redirect()->route('liste')->with('success', 'Candidat ajouté avec succès');
 }
 
@@ -122,8 +125,8 @@ return redirect()->route('liste')->with('success', 'Candidat ajouté avec succè
 }// Enregistre l'objet $candidat, qui inclut maintenant le nom de fichier de la photo, dans la base de données
          $candidat->update();
 
-
          return redirect('/liste-candidat')->with('success', 'Candidat ajouté avec succès');
+
 
 
 
@@ -156,7 +159,7 @@ public function pourcentages()
 
     return view('candidats.pourcentages', compact('candidats', 'totalVotes'));
 }
- 
+
 }
 
 

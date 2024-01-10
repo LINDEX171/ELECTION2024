@@ -103,7 +103,7 @@
 
 
 
-  <form id="awesomeForm" action="/updatestore"  enctype="multipart/form-data"  method="post">
+  <form id="awesomeForm" action="/updatestorecandidat"  enctype="multipart/form-data"  method="post">
     @csrf
 
   <input type="text" name="id" style="display: none;" value="{{ $candidat->id }}">

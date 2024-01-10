@@ -85,7 +85,7 @@
                     <td>{{ $e->Adresse }}</td>
 
                     <td>
-                        <a href="/update-electeur/{{ $e->id }}" class="btn btn-info btn-sm">Modifier</a>
+                   <!--    <a href="/update-electeur/{{ $e->id }}" class="btn btn-info btn-sm">Modifier</a> -->
                         <a href="/delete-electeur/{{ $e->id }}" class="btn btn-danger btn-sm">Supprimer</a>
                     </td>
 
