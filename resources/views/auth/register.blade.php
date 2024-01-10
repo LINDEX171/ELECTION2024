@@ -45,7 +45,8 @@
                             <div class="col-md-6">
                                 <select id="role" class="form-control" name="role" required>
                                     <option value="user">User</option>
-                                  <option value="admin">Admin</option>
+                                  <option value="admin">Admin</option> 
+                                </select>
 
                                 @error('role')
                                 <span class="invalid-feedback" role="alert">
