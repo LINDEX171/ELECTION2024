@@ -8,11 +8,16 @@ use Illuminate\Http\Request;
 
 class ElecteurController extends Controller
 {
-    public function index(){
-        //return Apprenant::all();
-        $candidats = Candidat::all();
-        return view('electeurs.electeur', compact('candidats'));
-    }
+    // ...
+
+public function index(){
+    $candidats = Candidat::all();
+    $electeur = auth()->user(); // Récupérer l'électeur connecté
+    return view('electeurs.electeur', compact('candidats', 'electeur'));
+}
+
+// ...
+
 
 
 

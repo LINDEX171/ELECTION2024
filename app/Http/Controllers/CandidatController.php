@@ -125,7 +125,7 @@ return redirect()->route('liste')->with('success', 'Candidat ajouté avec succè
 }// Enregistre l'objet $candidat, qui inclut maintenant le nom de fichier de la photo, dans la base de données
          $candidat->update();
 
-         return redirect('/liste-candidat')->with('success', 'Candidat ajouté avec succès');
+         return redirect('/liste-candidat')->with('success', 'Candidat modifié avec succès');
 
 
 

@@ -26,7 +26,7 @@
 
     </style>
 
-
+<a href="/accueil" style="font-size: 24px; color: black;">&#8592; Retour</a>
 <!-- dans la vue 'candidats/pourcentages.blade.php' -->
 <h2>Pourcentages de Votes</h2>
 <canvas id="chart"></canvas>

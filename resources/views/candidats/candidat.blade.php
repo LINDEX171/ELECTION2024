@@ -92,9 +92,10 @@
 <body>
 
     <div class="container">
+
         <h2>Formulaire pour les candidats</h2>
 
-
+        <a href="/admin-dashboard" style="font-size: 24px; color: black;">&#8592; Retour</a>
 
         <form id="awesomeForm" action="{{ Route('enregistrerCandidat') }}" enctype="multipart/form-data" method="post">
             @csrf
@@ -129,7 +130,7 @@
                 <label for="photo">Téléchargez votre photo :</label>
                 <input type="file" class="form-control-file" id="photo" name="photo" accept="image/*" required>
             </div>
-            
+
             <button type="submit" class="btn btn-primary" >Envoyer</button>
         </form>
     </div>

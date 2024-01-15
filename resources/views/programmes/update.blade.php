@@ -92,42 +92,22 @@
 <body>
 
 <div class="container mt-5">
-    <a href="/accueil" style="font-size: 24px; color: black;">&#8592; Retour</a>
-  <h2 class="mb-4">Formulaire pour les electeurs</h2>
-  <form id="awesomeForm" action="{{ Route('enregistrerElecteur') }}"  enctype="multipart/form-data"  method="post">
+    <a href="/admin-dashboard" style="font-size: 24px; color: black;">&#8592; Retour</a>
+  <h2 class="mb-4">Formulaire de programme</h2>
+  <form id="awesomeForm" action="/updatestoreprogramme"  enctype="multipart/form-data"  method="post">
     @csrf
-    <!-- ... -->
+    <input type="text" name="id" style="display: none;" value="{{ $programme->id }}">
 
-<div class="form-group">
-    <label for="Nom">Nom :</label>
-    <input type="text" class="form-control" id="" name="Nom" placeholder="Entrez votre nom" value="{{ $electeur->Nom }}" required>
- </div>
- <div class="form-group">
-    <label for="Prenom">Prenom :</label>
-    <input type="text" class="form-control" id="" name="Prenom" placeholder="Entrez votre prénom" value="{{ $electeur->Prenom }}" required>
- </div>
-
- <!-- ... -->
 
     <div class="form-group">
-        <label for="CNI">Téléchargez votre photo de CNI :</label>
-        <input type="file" class="form-control-file" id="" name="CNI"accept="image/*" required>
-    </div>
-    <div class="form-group">
-        <label for="Adresse">Adresse :</label>
-        <input type="text" class="form-control" id="" name="Adresse" placeholder="Entrez votre Adresse" required>
+        <label for="photo">photo candidat :</label>
+        <input type="file" class="form-control-file" id="" name="{{ $programme->photo }}"accept="image/*" required>
     </div>
 
     <div class="form-group">
-        <label for="candidat_id">Choisir un candidat :</label>
-        <select name="candidat_id" class="form-control">
-            <option value="" selected disabled>Sélectionnez un candidat</option>
-            @foreach ($candidats as $candidat)
-                <option value="{{ $candidat->id }}">{{ $candidat->Nom }} {{ $candidat->Prenom }}</option>
-            @endforeach
-        </select>
+        <label for="pdf">programme candidat :</label>
+        <input type="file" class="form-control-file" id="" name="{{ $programme->pdf }}" required>
     </div>
-
 
 
     <button type="submit" class="btn btn-primary"  value="envoyer" ">Envoyer</button>
@@ -162,3 +142,4 @@
 
 </body>
 </html>
+

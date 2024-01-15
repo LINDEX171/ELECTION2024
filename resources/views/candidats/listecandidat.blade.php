@@ -49,6 +49,7 @@
 <body>
 
 <div class="container">
+    <a href="/admin-dashboard" style="font-size: 24px; color: black;">&#8592; Retour</a>
     <h2><Marquee> <span style="color: green;">★</span>
         <span style="color: yellow;">★</span>
         <span style="color: red;">★</span>Liste des Candidats <span style="color: green;">★</span>

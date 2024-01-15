@@ -5,6 +5,7 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="color: black;">{{ auth()->user()->name }}</a>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/candidats-disponible" style="color: black;">candidats-disponible</a></li>
+                <li><a class="dropdown-item" href="/programmes-disponible" style="color: black;">programmes-disponible</a></li>
                 <li><a class="dropdown-item" href="/electeur" style="color: black;">voter</a></li>
                 <li><a class="dropdown-item" href="{{ route('pourcentages') }}" style="color: black;">statistique</a></li>
                 <li><hr class="dropdown-divider"></li>

@@ -51,10 +51,14 @@ Route::get('/candidats-disponible', function () {
     return view('candidats-disponible', compact('candidat'));
 });
 
+Route::get('/programmes-disponible', function () {
+    $programme = Programme::all();
 
-    Route::get('/candidat',[CandidatController::class,'index']);
-    Route::get('/electeur',[ElecteurController::class,'index']);
+    return view('programmes-disponible', compact('programme'));
+});
 
+
+Route::get('/electeur',[ElecteurController::class,'index']);
 
    // web.php
 
@@ -62,24 +66,39 @@ Route::get('/admin-dashboard',[AdminController::class,'index'])->name('admin.das
 
 
         Route::post('/storecandidats',[CandidatController::class,'store'])->name('enregistrerCandidat');
-        Route::get('/liste-candidat',[CandidatController::class,'liste'])->name('liste');
         Route::get('/update-candidat/{id}',[CandidatController::class,'updatecandidat']);
+
+        Route::post('/storeelecteurs',[ElecteurController::class,'store'])->name('enregistrerElecteur');
+        Route::get('/update-electeur/{id}',[ElecteurController::class,'updateelecteur']);
+
+
+
+
+    Route::group(['middleware' => ['role:admin']], function () {
+        // Routes accessibles uniquement aux utilisateurs avec le rôle d'admin
+
+        Route::get('/candidat',[CandidatController::class,'index']);
+        Route::get('/programme',[ProgrammeController::class,'index']);
+
+
+
         Route::post('/updatestorecandidat',[CandidatController::class,'updatestorecandidat']);
         Route::get('/delete-candidat/{id}',[CandidatController::class,'deletecandidat']);
 
-
-        Route::post('/storeelecteurs',[ElecteurController::class,'store'])->name('enregistrerElecteur');
-        Route::get('/liste-electeur',[ElecteurController::class,'liste'])->name('liste1');
-        Route::get('/update-electeur/{id}',[ElecteurController::class,'updateelecteur']);
         Route::post('/updatestore',[ElecteurController::class,'updatestoreelecteur']);
         Route::get('/delete-electeur/{id}',[ElecteurController::class,'deleteelecteur']);
 
+        Route::post('/updatestoreprogramme',[ProgrammeController::class,'updatestoreprogramme']);
+        Route::get('/delete-programme/{id}',[ProgrammeController::class,'deleteprogramme']);
 
-   // Route::group(['middleware' => ['role:admin']], function () {
-        // Routes accessibles uniquement aux utilisateurs avec le rôle d'admin
+
+        Route::get('/liste-candidat',[CandidatController::class,'liste'])->name('liste');
+        Route::get('/liste-electeur',[ElecteurController::class,'liste'])->name('liste1');
+        Route::get('/liste-programme',[ProgrammeController::class,'liste'])->name('liste3');
 
 
-   // });
+
+    });
 
 
 
@@ -99,16 +118,16 @@ Route::get('/pourcentages', [CandidatController::class, 'pourcentages'])->name('
 
 
 
-
-
-Route::get('/programme',[ProgrammeController::class,'index']);
 Route::post('/storeprogrammes',[ProgrammeController::class,'store'])->name('enregistrerProgramme');
-Route::get('/liste-programme',[ProgrammeController::class,'liste'])->name('liste2');
+Route::get('/telecharger{pdf}',[ProgrammeController::class,'telecharger']);
+Route::get('/update-programme/{id}',[ProgrammeController::class,'updateprogramme']);
+
+
 
 
 Route::get('/secteur',[SecteurController::class,'index']);
 Route::post('/storesecteurs',[SecteurController::class,'store'])->name('enregistrerSecteur');
-Route::get('/liste-secteur',[SecteurController::class,'liste'])->name('liste3');
+Route::get('/liste-secteur',[SecteurController::class,'liste'])->name('liste4');
 
 Auth::routes();
 

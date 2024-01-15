@@ -31,6 +31,15 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/accueil';
 
+    protected function redirectTo()
+    {
+        if (auth()->user()->role === 'admin') {
+            return '/admin-dashboard';
+        }
+
+        return '/accueil';
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -77,7 +86,7 @@ class RegisterController extends Controller
             // Redirige l'admin vers une page différente
             $this->redirectTo = '/admin-dashboard';
         }
-       
+
     }
 
 }

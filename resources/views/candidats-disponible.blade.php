@@ -45,13 +45,13 @@
             color: #fff; /* Couleur du texte de l'en-tête */
         }
     </style>
-    @include('includes.navbar')
+
 </head>
 
 <body>
 
 <div class="container">
-
+    <a href="/accueil" style="font-size: 24px; color: black;">&#8592; Retour</a>
     <h2><Marquee> <span style="color: green;">★</span>
         <span style="color: yellow;">★</span>
         <span style="color: red;">★</span>Liste des Candidats <span style="color: green;">★</span>

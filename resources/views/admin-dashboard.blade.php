@@ -235,12 +235,7 @@
                             <small>Dashboard</small>
                         </a>
                     </li>
-                    <li>
-                        <a href="/pourcentages">
-                            <span class="las la-chart-bar"></span> <!-- Utilisez la classe de l'icône "statistiques" que vous préférez -->
-                            <small>Statistiques</small>
-                        </a>
-                    </li>
+
                     <li>
                        <a href="/candidat">
                             <span class="las la-plus-circle"></span>
@@ -266,6 +261,28 @@
                          </a>
                      </li>
 
+                     <li>
+                        <a href="/programme">
+                             <span class="las la-plus-circle"></span>
+                             <small>Ajouter Programme</small>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="/liste-programme">
+                             <span class="las la-list"></span>
+                             <small>Lister programme</small>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="/pourcentages">
+                            <span class="las la-chart-bar"></span> <!-- Utilisez la classe de l'icône "statistiques" que vous préférez -->
+                            <small>Statistiques</small>
+                        </a>
+                    </li>
+
+
+
+
                 </ul>
             </div>
         </div>
@@ -290,8 +307,8 @@
                 <small>Home / Dashboard</small>
             </div>
 
-            @include('candidats.listecandidat')
-            
+
+
         </main>
 
     </div>

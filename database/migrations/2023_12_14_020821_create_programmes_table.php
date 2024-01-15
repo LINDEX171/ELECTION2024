@@ -16,9 +16,8 @@ return new class extends Migration
     {
         Schema::create('programmes', function (Blueprint $table) {
             $table->id();
-            $table->String("titre");
-            $table->text("document");
-            $table->String("contenue");
+            $table->mediumText("photo")->nullable();
+            $table->String("pdf");
             $table->timestamps();
         });
     }

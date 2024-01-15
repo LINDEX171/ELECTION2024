@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Programme extends Model
 {
     use HasFactory;
-    protected $guarded= [];
+    // Programme.php
+protected $fillable = ['photo', 'pdf'];
+
 }

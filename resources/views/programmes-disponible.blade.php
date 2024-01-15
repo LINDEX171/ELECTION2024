@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des candidats</title>
+    <title>Liste des programmes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -49,10 +49,10 @@
 <body>
 
 <div class="container">
-    <a href="/admin-dashboard" style="font-size: 24px; color: black;">&#8592; Retour</a>
+    <a href="/accueil" style="font-size: 24px; color: black;">&#8592; Retour</a>
     <h2><Marquee> <span style="color: green;">★</span>
         <span style="color: yellow;">★</span>
-        <span style="color: red;">★</span>Liste des electeurs <span style="color: green;">★</span>
+        <span style="color: red;">★</span>Liste des Programmes <span style="color: green;">★</span>
         <span style="color: yellow;">★</span>
         <span style="color: red;">★</span></Marquee></h2>
 
@@ -68,28 +68,27 @@
         <thead class="thead-dark">
             <tr>
 
-                <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">CNI</th>
-                <th scope="col">Adresse</th>
-                <th scope="col">Action</th>
+                <th scope="col">Photo</th>
+                <th scope="col">programme</th>
+                <th scope="col">Voter</th>
+
+
 
             </tr>
         </thead>
         <tbody>
-            @foreach ($electeur as $e)
+            @foreach ($programme as $p)
                 <tr>
 
-                    <td>{{ $e->Nom }}</td>
-                    <td>{{ $e->Prenom }}</td>
-                    <td><img src="{{ asset('uploads/electeurs/' . $e->CNI) }}" alt="Photo du CNI" height="100;" width="100;"></td>
-                    <td>{{ $e->Adresse }}</td>
-
+                    <td><img src="{{ asset('uploads/programmes/' . $p->photo) }}" alt="Photo du candidat" height="100;" width="100;"></td>
                     <td>
-                   <!--    <a href="/update-electeur/{{ $e->id }}" class="btn btn-info btn-sm">Modifier</a> -->
-                        <a href="/delete-electeur/{{ $e->id }}" class="btn btn-danger btn-sm">Supprimer</a>
+                        <!-- Utilisation de la balise embed pour afficher le PDF -->
+                        <embed src="{{ asset('uploads/programmes/' . $p->pdf) }}" type="application/pdf" width="800" height="500">
                     </td>
-
+                    <td> <!-- Colonne d'action -->
+                        <!-- Ajoutez des boutons J'aime et Je n'aime pas ici -->
+                        <a href="/electeur" class="btn btn-primary">Voter</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody

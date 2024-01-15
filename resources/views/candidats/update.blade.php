@@ -98,6 +98,7 @@
 <body>
 
     <div class="container">
+        <a href="/admin-dashboard" style="font-size: 24px; color: black;">&#8592; Retour</a>
         <h2>Modification du candidat <h3 class="c">{{$candidat->Nom}}</h3></h2>
 
 
