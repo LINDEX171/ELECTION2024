@@ -45,8 +45,52 @@
             color: #fff; /* Couleur du texte de l'en-tête */
         }
     </style>
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- Ajoutez ce script après vos autres scripts jQuery -->
+<script>
+    $(document).ready(function() {
+        $('.btn-like').on('click', function(event) {
+            handleVote($(this), '/vote-like', event);
+        });
+
+        $('.btn-dislike').on('click', function(event) {
+            handleVote($(this), '/vote-dislike', event);
+        });
+
+        function handleVote(button, url, event) {
+            event.preventDefault();
+
+            var programmeId = button.data('programme-id');
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: { programme_id: programmeId },
+                dataType: 'json',
+                success: function(response) {
+                    // Mettez à jour les compteurs de likes et dislikes sur la page
+                    // Vous pouvez ajouter ces éléments à votre structure HTML
+                    console.log('Likes: ' + response.likes);
+                    console.log('Dislikes: ' + response.dislikes);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    });
+    </script>
+
+
+
+
 </head>
 <body>
+
+
+
 
 <div class="container">
     <a href="/accueil" style="font-size: 24px; color: black;">&#8592; Retour</a>
@@ -71,6 +115,8 @@
                 <th scope="col">Photo</th>
                 <th scope="col">programme</th>
                 <th scope="col">Voter</th>
+                <th scope="col">Action</th>
+
 
 
 
@@ -89,6 +135,26 @@
                         <!-- Ajoutez des boutons J'aime et Je n'aime pas ici -->
                         <a href="/electeur" class="btn btn-primary">Voter</a>
                     </td>
+
+                    <td>
+<!-- Ajoutez ces lignes à l'endroit approprié dans votre boucle foreach -->
+<form action="{{ route('vote-programme', ['programme' => $p->id, 'type' => 'like']) }}" method="post" class="d-inline">
+    @csrf
+    <button type="submit" name="action" value="like" class="btn btn-success btn-like">J'aime</button>
+</form>
+
+<span class="likes-count">{{ $p->likes }}</span> Likes
+
+<form action="{{ route('vote-programme', ['programme' => $p->id, 'type' => 'dislike']) }}" method="post" class="d-inline">
+    @csrf
+    <button type="submit" name="action" value="dislike" class="btn btn-danger btn-dislike">Je n'aime pas</button>
+</form>
+
+<span class="dislikes-count">{{ $p->dislikes }}</span> Dislikes
+
+                    </td>
+                </tr>
+
                 </tr>
             @endforeach
         </tbody

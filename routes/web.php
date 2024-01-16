@@ -5,14 +5,14 @@ use App\Models\Electeur;
 use App\Models\Programme;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VoteController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\JaimeController;
 use App\Http\Controllers\SecteurController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\ElecteurController;
 use App\Http\Controllers\ProgrammeController;
 use App\Http\Controllers\Auth\LoginController;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +26,9 @@ use App\Http\Controllers\Auth\LoginController;
 
 
 
+Route::post('/vote-like', [VoteController::class, 'like']);
+Route::post('/vote-dislike', [VoteController::class, 'dislike']);
+Route::post('/vote-programme/{programme}/{type}', [VoteController::class, 'voteProgramme'])->name('vote-programme');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -56,6 +59,8 @@ Route::get('/programmes-disponible', function () {
 
     return view('programmes-disponible', compact('programme'));
 });
+
+
 
 
 Route::get('/electeur',[ElecteurController::class,'index']);
@@ -125,9 +130,9 @@ Route::get('/update-programme/{id}',[ProgrammeController::class,'updateprogramme
 
 
 
-Route::get('/secteur',[SecteurController::class,'index']);
-Route::post('/storesecteurs',[SecteurController::class,'store'])->name('enregistrerSecteur');
-Route::get('/liste-secteur',[SecteurController::class,'liste'])->name('liste4');
+//Route::get('/secteur',[SecteurController::class,'index']);
+//Route::post('/storesecteurs',[SecteurController::class,'store'])->name('enregistrerSecteur');
+//Route::get('/liste-secteur',[SecteurController::class,'liste'])->name('liste4');
 
 Auth::routes();
 

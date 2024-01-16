@@ -9,6 +9,6 @@ class Programme extends Model
 {
     use HasFactory;
     // Programme.php
-protected $fillable = ['photo', 'pdf'];
+protected $fillable = ['photo', 'pdf', 'likes', 'dislikes'];
 
 }
