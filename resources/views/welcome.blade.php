@@ -113,10 +113,10 @@ Nous croyons en la puissance de la participation citoyenne, et chaque vote compt
                             <article class="brick brick--double entry">
 
                                     <div class="entry__thumb">
-                                        <img src="boots/images/folio/pros1.png" alt="">
+                                        <img src="boots/images/folio/diomaye.png" alt="">
                                     </div>
                                     <div class="entry__info">
-                                        <div class="entry__cat" style="color: black;">OUSMANE SONKO</div>
+                                        <div class="entry__cat" style="color: black;">BASSIROU DIOMAYE FAYE</div>
                                         <h4 class="entry__title" style="color: black;">YEEWI ASKAN WI</h4>
                                     </div>
                             </article> <!-- entry -->
@@ -124,35 +124,46 @@ Nous croyons en la puissance de la participation citoyenne, et chaque vote compt
                             <article class="brick brick--double entry">
 
                                     <div class="entry__thumb">
-                                        <img src="boots/images/folio/thioneniang1.png" alt="">
+                                        <img src="boots/images/folio/antababacarngom.png" alt="">
                                     </div>
                                     <div class="entry__info">
-                                        <div class="entry__cat" style="color: black;">THIONE NIANG</div>
-                                        <h4 class="entry__title" style="color: black;">JEUF JOTNA</h4>
+                                        <div class="entry__cat" style="color: black;">Anta Babacar Ngom</div>
+                                        <h4 class="entry__title" style="color: black;">ARC</h4>
                                     </div>
                             </article> <!-- entry -->
+
+                                  <article class="brick brick--double entry">
+
+                                <div class="entry__thumb">
+                                    <img src="boots/images/folio/khalifasall1.png" alt="">
+                                </div>
+                                <div class="entry__info">
+                                    <div class="entry__cat" style="color: black;">KHALIFA SALL</div>
+                                    <h4 class="entry__title" style="color: black;">TAXAWU SENEGAL</h4>
+                                </div>
+                        </article> <!-- entry -->
 
                             <article class="brick brick--double entry">
 
                                     <div class="entry__thumb">
-                                        <img src="boots/images/folio/karimwade1.png" alt="">
+                                        <img src="boots/images/folio/idi.png" alt="">
                                     </div>
                                     <div class="entry__info">
-                                        <div class="entry__cat" style="color: black;">KARIM WADE</div>
-                                        <h4 class="entry__title" style="color: black;">PDS</h4>
+                                        <div class="entry__cat" style="color: black;">IDRISSA SECK</div>
+                                        <h4 class="entry__title" style="color: black;">reew mi</h4>
                                     </div>
                             </article> <!-- entry -->
 
-                            <article class="brick brick--double entry">
+                        <article class="brick brick--double entry">
 
-                                    <div class="entry__thumb">
-                                        <img src="boots/images/folio/papedjibrilfall1.png" alt="">
-                                    </div>
-                                    <div class="entry__info">
-                                        <div class="entry__cat" style="color: black;">PAPE DJIBRIL FALL</div>
-                                        <h4 class="entry__title" style="color: black;">SERVITEUR</h4>
-                                    </div>
-                            </article> <!-- entry -->
+                            <div class="entry__thumb">
+                                <img src="boots/images/folio/papedjbril2.png" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <div class="entry__cat" style="color: black;">PAPE DJIBRIL FALL</div>
+                                <h4 class="entry__title" style="color: black;">SERVITEUR</h4>
+                            </div>
+                    </article> <!-- entry -->
 
                             <article class="brick brick--double entry">
 
@@ -165,16 +176,36 @@ Nous croyons en la puissance de la participation citoyenne, et chaque vote compt
                                     </div>
                             </article> <!-- entry -->
 
-                            <article class="brick brick--double entry">
 
-                                <div class="entry__thumb">
-                                    <img src="boots/images/folio/khalifasall1.png" alt="">
-                                </div>
-                                <div class="entry__info">
-                                    <div class="entry__cat" style="color: black;">KHALIFA SALL</div>
-                                    <h4 class="entry__title" style="color: black;">TAXAWU SENEGAL</h4>
-                                </div>
-                        </article> <!-- entry -->
+
+
+                        <article class="brick brick--double entry">
+
+                            <div class="entry__thumb">
+                                <img src="boots/images/folio/BOUBACARCAMARA.png" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <div class="entry__cat" style="color: black;">BOUBACAR CAMARA</div>
+                                <h4 class="entry__title" style="color: black;">PCS/jengu tabax</h4>
+                            </div>
+                    </article> <!-- entry -->
+
+
+
+
+                <article class="brick brick--double entry">
+
+                    <div class="entry__thumb">
+                        <img src="boots/images/folio/dethiefall.png" alt="">
+                    </div>
+                    <div class="entry__info">
+                        <div class="entry__cat" style="color: black;">DETHIE FALL</div>
+                        <h4 class="entry__title" style="color: black;">PRP</h4>
+                    </div>
+            </article> <!-- entry -->
+
+
+
 
                        <!--      <article class="brick entry">
 
@@ -189,7 +220,7 @@ Nous croyons en la puissance de la participation citoyenne, et chaque vote compt
 
                         </div> <!-- end bricks-wrapper -->
 
-                        <div class="row section-header light-on-dark" data-num="06">
+                        <div class="row section-header light-on-dark" data-num="18">
                             <h3 class="column lg-12 section-header__pretitle text-pretitle">CANDIDATS</h3>
                             <div class="column lg-6 stack-on-1100 section-header__primary">
                                 <h2 class="title text-display-1">

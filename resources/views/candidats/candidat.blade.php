@@ -95,7 +95,7 @@
 
         <h2>Formulaire pour les candidats</h2>
 
-        <a href="/admin-dashboard" style="font-size: 24px; color: black;">&#8592; Retour</a>
+      <!--  <a href="/admin-dashboard" style="font-size: 24px; color: black;">&#8592; Retour</a> -->
 
         <form id="awesomeForm" action="{{ Route('enregistrerCandidat') }}" enctype="multipart/form-data" method="post">
             @csrf

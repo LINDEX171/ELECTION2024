@@ -78,7 +78,7 @@
         <tbody>
             @foreach ($candidat as $c)
                 <tr>
-                    <td>{{ $c->Nom }}</td>
+                    <td><a href="/"> {{$c->Nom }}</td>
                     <td>{{ $c->Prenom }}</td>
                     <td>{{ $c->Partie }}</td>
                     <td>{{ $c->Biographie }}</td>

@@ -115,7 +115,7 @@
                 <th scope="col">Photo</th>
                 <th scope="col">programme</th>
                 <th scope="col">Voter</th>
-                <th scope="col">Action</th>
+
 
 
 
@@ -129,30 +129,14 @@
                     <td><img src="{{ asset('uploads/programmes/' . $p->photo) }}" alt="Photo du candidat" height="100;" width="100;"></td>
                     <td>
                         <!-- Utilisation de la balise embed pour afficher le PDF -->
-                        <embed src="{{ asset('uploads/programmes/' . $p->pdf) }}" type="application/pdf" width="800" height="500">
+                        <embed src="{{ asset('uploads/programmes/' . $p->pdf) }}" type="application/pdf" width="500" height="500">
                     </td>
                     <td> <!-- Colonne d'action -->
                         <!-- Ajoutez des boutons J'aime et Je n'aime pas ici -->
                         <a href="/electeur" class="btn btn-primary">Voter</a>
                     </td>
 
-                    <td>
-<!-- Ajoutez ces lignes à l'endroit approprié dans votre boucle foreach -->
-<form action="{{ route('vote-programme', ['programme' => $p->id, 'type' => 'like']) }}" method="post" class="d-inline">
-    @csrf
-    <button type="submit" name="action" value="like" class="btn btn-success btn-like">J'aime</button>
-</form>
 
-<span class="likes-count">{{ $p->likes }}</span> Likes
-
-<form action="{{ route('vote-programme', ['programme' => $p->id, 'type' => 'dislike']) }}" method="post" class="d-inline">
-    @csrf
-    <button type="submit" name="action" value="dislike" class="btn btn-danger btn-dislike">Je n'aime pas</button>
-</form>
-
-<span class="dislikes-count">{{ $p->dislikes }}</span> Dislikes
-
-                    </td>
                 </tr>
 
                 </tr>

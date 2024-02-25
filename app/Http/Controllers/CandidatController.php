@@ -75,7 +75,7 @@ return redirect()->route('liste')->with('success', 'Candidat ajouté avec succè
 /**
      * Display the specified resource.
      */
-   
+
 
     /**
      * Show the form for editing the specified resource.

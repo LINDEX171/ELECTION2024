@@ -99,6 +99,27 @@
     </table>
 </div>
 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var images = document.querySelectorAll('.candidat-photo');
+
+        images.forEach(function(image) {
+            image.addEventListener('click', function() {
+                var imageUrl = this.getAttribute('src');
+                var modal = document.createElement('div');
+                modal.classList.add('modal');
+                modal.innerHTML = '<img src="' + imageUrl + '" alt="Photo agrandie du candidat">';
+                document.body.appendChild(modal);
+
+                modal.addEventListener('click', function() {
+                    modal.remove();
+                });
+            });
+        });
+    });
+</script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
