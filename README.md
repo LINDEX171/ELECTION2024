@@ -12,6 +12,16 @@
 </p>
 
 ![1](https://github.com/LINDEX171/ELECTION2024/assets/129359610/15dd86d9-ca5c-43ee-86b3-f02af4b38999)
+![2](https://github.com/LINDEX171/ELECTION2024/assets/129359610/56bde569-4c62-4367-9fc9-e1fda0f8daf1)
+![3](https://github.com/LINDEX171/ELECTION2024/assets/129359610/2858814b-3a13-4b54-980b-ef8422f73704)
+![4](https://github.com/LINDEX171/ELECTION2024/assets/129359610/51de99fa-6d8d-4263-a388-81f3a102c165)
+![5](https://github.com/LINDEX171/ELECTION2024/assets/129359610/4c412ec3-c8b2-4d53-a04f-84c0db2155bb)
+![6](https://github.com/LINDEX171/ELECTION2024/assets/129359610/e07e132c-5fe9-4982-b37d-493ddf821b04)
+![7](https://github.com/LINDEX171/ELECTION2024/assets/129359610/7cadd055-fab9-4813-bf95-a14d7f3a4473)
+![8](https://github.com/LINDEX171/ELECTION2024/assets/129359610/b0002c05-aae4-4ddf-9a93-387862f9fc1c)
+![9](https://github.com/LINDEX171/ELECTION2024/assets/129359610/d9d8d955-d3d2-4b8f-9880-28fc1310a8e5)
+![10](https://github.com/LINDEX171/ELECTION2024/assets/129359610/25aa81e2-8168-4384-beba-8c056c878e86)
+
 
 ## About Laravel
 
